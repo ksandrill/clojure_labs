@@ -3,7 +3,7 @@
 (defn extend-word [word, alphabet, result-word]             ; add to word[n-1] n symbol
   (cond
     (= (count alphabet) 0) result-word
-    (= (first word) (first alphabet)) (extend-word word (rest alphabet) result-word)
+    ; (= (first word) (first alphabet)) (extend-word word (rest alphabet) result-word)
     :default (extend-word
                word
                (rest alphabet)
@@ -28,6 +28,7 @@
     :default (extend-words (make-words alphabet (dec max-length)) alphabet (list))
     )
   )
+
 (defn evaluate [alphabet max-length]
   (let [result (make-words alphabet max-length)
         alphabet_size (count alphabet)]

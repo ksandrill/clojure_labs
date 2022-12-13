@@ -1,7 +1,7 @@
 (ns clojure-labs.lab-1.task-1-3)
 (defn my-map [delegate collection]
   (seq (reduce
-         (fn [acc x] (conj acc (delegate x)))
+         (fn [acc x] (concat acc (list (delegate x))))
          [] collection))
   )
 
